@@ -1,0 +1,66 @@
+/*Fonte*/
+@font-face{
+    font-family: "SuperMarioBros";
+    src: url(fonts/SuperMarioBros.ttf) format("truetype");
+}
+@font-face{
+    font-family: "Mario-Kart-DS";
+    src: url(fonts/Mario-Kart-DS.ttf) format("truetype");
+}
+
+body {
+    font-family: "SuperMarioBros";
+    text-align: center;
+    background-image: url("logomkalpha.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom -200px right 10px;
+}
+
+    .btn3d {
+        font-family: "SuperMarioBros";
+        background:white;
+        color:  rgb(116, 174, 240);
+        font-size: 3rem;
+        font-weight: 900;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 30px solid rgb(116, 174, 240);
+        box-shadow: 0px 12px 15px -2px rgba(48, 47, 47, 0.53);
+        outline: none;
+    }
+    .btn3d:hover {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dddddd+2,f9f9f9+24,f9f9f9+91,dddddd+100 */
+        background: #dddddd; /* Old browsers */
+        background: -moz-linear-gradient(top,  #dddddd 2%, #f9f9f9 24%, #f9f9f9 91%, #dddddd 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #dddddd 2%,#f9f9f9 24%,#f9f9f9 91%,#dddddd 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #dddddd 2%,#f9f9f9 24%,#f9f9f9 91%,#dddddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+        color:  rgb(105, 153, 209);
+        border: 30px solid  rgb(105, 153, 209);
+
+    }
+    .btn3d:active {
+       
+        box-shadow: 0px 7px 15px -2px rgba(0,0,0,0.53);
+    }
+p {
+    font-family:"Mario-Kart-DS"
+}
+
+.bandeiraf1 {
+    width: 90px;
+    height: 50px;
+}
+
+#partidade4 {
+    font-size: 1.5rem; 
+    font-weight: normal; 
+    color: rgb(3, 3, 3);
+}
+
+#tracks {
+    height:15%;
+    width: 15%;
+    border: 2px dashed #42b6e3;
+}
