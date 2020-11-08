@@ -18,12 +18,16 @@ var circ = [["Luigi Circuit", "Mushroom Cup", 1 , 1], ["Moo Moo Meadows", "Mushr
   ["Mario Circuit 3", "Lightning Cup",8 ,29 ], ["Peach Gardens", "Lightning Cup",8 ,30 ],
   ["DK Mountain", "Lightning Cup", 8, 31 ], ["Bowser's Castle 64", "Lightning Cup",8 ,32 ]]; 
 
-function sortear() { 
+
+const botao = document.querySelector('#botao-jogo');
+botao.addEventListener('click', sortear);
+
+function sortear() {
+  botao.removeEventListener('click', sortear);
   let vamosJogar = [];
   let contador = 1;
-  const botao = document.querySelector("#botao-sortear");
-  botao.parentNode.removeChild(botao);   
-  document.querySelector("#titulo-jogo").innerText = ' VAMOS JOGAR! ';
+  document.querySelector('#titulo-jogo').innerText = 'VAMOS JOGAR!';
+
   while (contador < 5) {
     let fase = circ[Math.floor(Math.random() * circ.length)];             
     if (!(vamosJogar.includes(fase))) {                    
@@ -31,7 +35,13 @@ function sortear() {
       contador += 1;
     }  
   }
-  
+
+  renderizarFases(vamosJogar);
+  botao.innerText = 'De novo?';
+  botao.addEventListener('click', () => { location.reload() });
+}
+
+function renderizarFases(arrayDeFases) {
   for (var ordem = 0; ordem < 4; ordem++) {
     const pistaSorteda = document.importNode(modeloCircuito.content, true);
 
@@ -39,25 +49,21 @@ function sortear() {
     imagemOrdem.src = `./imagens/acessorios/sort_${ordem+1}.png`;
     
     const nomeCircuito = pistaSorteda.querySelector('#nome-circuito');
-    nomeCircuito.innerHTML = `${vamosJogar[ordem][0]}`;
     
+    nomeCircuito.innerHTML = `${arrayDeFases[ordem][0]}`;
+
     const imagemCircuito = pistaSorteda.querySelector('#imagem-circuito');
-    imagemCircuito.src = `./imagens/circuitos/p_${vamosJogar[ordem][3]}.jpg`;
     
+    imagemCircuito.src = `./imagens/circuitos/p_${arrayDeFases[ordem][3]}.jpg`;
+
     const nomeCopa = pistaSorteda.querySelector('#nome-copa');
-    nomeCopa.innerHTML = `${vamosJogar[ordem][1]}`;
     
+    nomeCopa.innerHTML = `${arrayDeFases[ordem][1]}`;
+
     const imagemCopa = pistaSorteda.querySelector('#imagem-copa');
-    imagemCopa.src = `./imagens/copas/cup0${vamosJogar[ordem][2]}.png`;
     
+    imagemCopa.src = `./imagens/copas/cup0${arrayDeFases[ordem][2]}.png`;
+
     cartaoPartidas.appendChild(pistaSorteda);
   }
-
-  var novamente = document.createElement("button");
-  novamente.innerHTML = "De novo?";
-  novamente.setAttribute("class", "btn3d");
-  novamente.setAttribute("onclick", "javascript:location.reload()");
-  var btnNovamente = document.querySelector("#jogar-novamente");
-  btnNovamente.appendChild(novamente);
-  
-} 
+}
