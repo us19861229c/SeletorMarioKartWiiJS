@@ -1,0 +1,14 @@
+{
+  "name": "SeletorMarioKartWiiJS",
+  "version": "1.0.0",
+  "description": "Criei um seletor de fases aleatórias para jogar campeonatos (extra oficiais) de Mario Kart Wii. Ele seleciona 4 circuitos, distintos. Ainda carece de aprimoramentos no que diz respeito ao visual.",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/us19861229c/SeletorMarioKartWiiJS.git"
+  },
+  "author": "Rebecka",
+  "homepage": "https://us19861229c.github.io/SeletorMarioKartWiiJS/"
+}
