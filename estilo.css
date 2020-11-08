@@ -11,9 +11,10 @@
 body {
   font-family: "SuperMarioBros";
   text-align: center;
-  background-image: url("./imagens/acessorios/logomkalpha.jpg");
+  background-image: url("./imagens/acessorios/luigiemarioKart70.jpg");
   background-repeat: no-repeat;
-  background-position: bottom -200px right 10px;
+  background-position: bottom left;
+  min-height: 100vh;
 }
 
 .btn3d {
@@ -53,14 +54,10 @@ p {
   height: 50px;
 }
 
-#partidade4 {
-  font-size: 1.5rem; 
-  font-weight: normal; 
-  color: rgb(3, 3, 3);
-}
-
-#tracks {
-  height:15%;
-  width: 15%;
-  border: 2px dashed #42b6e3;
+.canteira {
+  position: relative;
+  top: 120%;
+  z-index: 1;
+  height: 5rem;
+  left: 20%;
 }

@@ -28,7 +28,7 @@ function sortear() {
   var cont = 1
   var botao = document.getElementById("button")
   botao.parentNode.removeChild(botao)        
-  document.getElementById("chamada").innerHTML= '<img class="bandeiraf1" src="./imagens/acessorios/f1.png"> VAMOS JOGAR! <img class="bandeiraf1" src="./imagens/acessorios/f1.png">'  
+  document.getElementById("chamada").innerText= ' VAMOS JOGAR! '  
   while (cont <5){
     fase = circ[Math.floor(Math.random() * circ.length)]                 
     if (!(vamosJogar.includes(fase))){                    
@@ -65,5 +65,4 @@ function sortear() {
   var btnNovamente = document.getElementById("hidpkmn")
   btnNovamente.appendChild(novamente)
   
-  document.body.style.background = "url('./imagens/acessorios/testebg.jpg') no-repeat bottom -180px right -200px"
 } 
