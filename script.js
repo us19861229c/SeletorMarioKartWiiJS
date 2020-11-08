@@ -1,5 +1,5 @@
-var down = document.getElementById('partidade4');
-const modeloCircuito = document.querySelector('#cartao-circuito')
+const cartaoPartidas = document.getElementById('cartao-partidas');
+const modeloCircuito = document.querySelector('#cartao-circuito');
 
 var circ = [["Luigi Circuit", "Mushroom Cup", 1 , 1], ["Moo Moo Meadows", "Mushroom Cup", 1 , 2],  
   ["Mushroom Gorge", "Mushroom Cup", 1, 3], ["Toad's Factory", "Mushroom Cup", 1, 4], 
@@ -18,51 +18,46 @@ var circ = [["Luigi Circuit", "Mushroom Cup", 1 , 1], ["Moo Moo Meadows", "Mushr
   ["Mario Circuit 3", "Lightning Cup",8 ,29 ], ["Peach Gardens", "Lightning Cup",8 ,30 ],
   ["DK Mountain", "Lightning Cup", 8, 31 ], ["Bowser's Castle 64", "Lightning Cup",8 ,32 ]]; 
 
-
-function random(mn, mx) {  
-  return Math.random() * (mx - mn) + mn;  
-}  
-
 function sortear() { 
-  var vamosJogar = []
-  var cont = 1
-  var botao = document.getElementById("button")
-  botao.parentNode.removeChild(botao)        
-  document.getElementById("chamada").innerText= ' VAMOS JOGAR! '  
-  while (cont <5){
-    fase = circ[Math.floor(Math.random() * circ.length)]                 
-    if (!(vamosJogar.includes(fase))){                    
-      vamosJogar.push(fase)
-      cont++
+  let vamosJogar = [];
+  let contador = 1;
+  const botao = document.querySelector("#botao-sortear");
+  botao.parentNode.removeChild(botao);   
+  document.querySelector("#titulo-jogo").innerText = ' VAMOS JOGAR! ';
+  while (contador < 5) {
+    let fase = circ[Math.floor(Math.random() * circ.length)];             
+    if (!(vamosJogar.includes(fase))) {                    
+      vamosJogar.push(fase);
+      contador += 1;
     }  
   }
   
-  for (var pos = 0; pos < 4; pos++) {
+  for (var ordem = 0; ordem < 4; ordem++) {
     const pistaSorteda = document.importNode(modeloCircuito.content, true);
 
     const imagemOrdem = pistaSorteda.querySelector('#imagem-ordem');
-    imagemOrdem.src = `./imagens/acessorios/sort_${pos+1}.png`;
+    imagemOrdem.src = `./imagens/acessorios/sort_${ordem+1}.png`;
     
     const nomeCircuito = pistaSorteda.querySelector('#nome-circuito');
-    nomeCircuito.innerHTML = `${vamosJogar[pos][0]}`;
+    nomeCircuito.innerHTML = `${vamosJogar[ordem][0]}`;
     
     const imagemCircuito = pistaSorteda.querySelector('#imagem-circuito');
-    imagemCircuito.src = `./imagens/circuitos/p_${vamosJogar[pos][3]}.jpg`;
+    imagemCircuito.src = `./imagens/circuitos/p_${vamosJogar[ordem][3]}.jpg`;
     
     const nomeCopa = pistaSorteda.querySelector('#nome-copa');
-    nomeCopa.innerHTML = `${vamosJogar[pos][1]}`;
+    nomeCopa.innerHTML = `${vamosJogar[ordem][1]}`;
     
     const imagemCopa = pistaSorteda.querySelector('#imagem-copa');
-    imagemCopa.src = `./imagens/copas/cup0${vamosJogar[pos][2]}.png`
+    imagemCopa.src = `./imagens/copas/cup0${vamosJogar[ordem][2]}.png`;
     
-    down.appendChild(pistaSorteda);
+    cartaoPartidas.appendChild(pistaSorteda);
   }
 
-  var novamente = document.createElement("button")
-  novamente.innerHTML = "De novo?"
-  novamente.setAttribute("class", "btn3d")
-  novamente.setAttribute("onclick", "javascript:location.reload()")
-  var btnNovamente = document.getElementById("hidpkmn")
-  btnNovamente.appendChild(novamente)
+  var novamente = document.createElement("button");
+  novamente.innerHTML = "De novo?";
+  novamente.setAttribute("class", "btn3d");
+  novamente.setAttribute("onclick", "javascript:location.reload()");
+  var btnNovamente = document.querySelector("#jogar-novamente");
+  btnNovamente.appendChild(novamente);
   
 } 
