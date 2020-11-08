@@ -4,29 +4,50 @@
 <head>  
   <meta charset="UTF-8">
   <title> Vamos Jogar! 🍄|⭐ MKWii </title> 
+  <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
   <link rel="stylesheet" href="estilo.css">
   <script src="./script.js" defer></script>
 </head> 
 <body>
-    <h1 id="chamada">
-      <img class="bandeiraf1" src="./imagens/acessorios/f1.png" />
-      MARIO KART SELETOR DE CIRCUITOS!!
-      <img class="bandeiraf1" src="./imagens/acessorios/f1.png" />
-    </h1>
+  <h1 id="chamada">
+    <img class="bandeiraf1" src="./imagens/acessorios/f1.png" />
+    MARIO KART SELETOR DE CIRCUITOS!!
+    <img class="bandeiraf1" src="./imagens/acessorios/f1.png" />
+  </h1>
   <button id="button" class="btn3d" onclick="sortear()">  
     VAMOS CORRER!
   </button>
   <!-- Decora a saída do texto down.innerHtml--> 
-  <div id="partidade4"></div>
+  <div class="container">
+    <div id="partidade4" class="columns is-multiline is-centered"></div>
+  </div>
   <div id="hidpkmn"></div>
 
   <template id="cartao-circuito">
-    <div class="container-circuito">
-      <img id="imagem-ordem">
-      Circuito: <span id="nome-circuito"></span>
-      <img id="imagem-circuito"> 
-      -  Copa: <span id="nome-copa"></span>
-      <img id="imagem-copa">
+    <div class="container-circuito column is-one-third is-6">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-64x64">
+            <img id="imagem-ordem">
+          </figure>
+          <figure class="image is-3by1">
+            <img id="imagem-circuito"> 
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img id="imagem-copa">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p id="nome-circuito" class="title is-4"></p>
+              <p id="nome-copa" class="subtitle is-6"></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </template>
 </body>  
