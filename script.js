@@ -11,7 +11,7 @@ function sortear() {
   while (contador < 5) {
     let faseID = Math.ceil(Math.random() * circuitos.length);
     let faseSelecionada = circuitos.filter((circuito) => circuito.id === faseID);
-    if (!(vamosJogar.includes(faseSelecionada))) {
+    if (!(vamosJogar.includes(...faseSelecionada))) {
       vamosJogar.push(...faseSelecionada);
       contador += 1;
     }
